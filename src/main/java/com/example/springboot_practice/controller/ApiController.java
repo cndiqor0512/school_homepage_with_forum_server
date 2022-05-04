@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 public class ApiController {
@@ -43,6 +43,7 @@ public class ApiController {
 
     @GetMapping("/api/main")
     public MainResponseDto getMainList() {
+        System.out.println("Controller");
         return mainService.getMainList();
     }
 

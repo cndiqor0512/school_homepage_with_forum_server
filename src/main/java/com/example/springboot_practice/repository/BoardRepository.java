@@ -19,7 +19,9 @@ public interface BoardRepository {
 
     List<BoardResponseDto> getListByType(String boardType);
 
-    List<BoardResponseDto> getBoardLimit();
+    List<BoardResponseDto> getBoardLimitSchool();
+    List<BoardResponseDto> getBoardLimitClass();
+    List<BoardResponseDto> getBoardLimitClub();
 
     void saveBoardData(BoardRequestDto dto);
 

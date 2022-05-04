@@ -8,7 +8,7 @@
             regdate,
             publisher,
             contents
-        FROM notice where is_use = 1
+        FROM notice where is_use = 1 order by id desc
     </select>
     <select id="getNoticeData" resultType="com.example.springboot_practice.dto.NoticeResponseDto">
         SELECT

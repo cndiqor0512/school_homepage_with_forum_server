@@ -9,7 +9,7 @@
             publisher,
             contents,
             board_type
-        FROM board where is_use = 1
+        FROM board where is_use = 1 order by id desc
     </select>
     <select id="getUserBoardData" resultType="com.example.springboot_practice.dto.BoardResponseDto">
         SELECT
@@ -39,9 +39,9 @@
             publisher,
             contents,
             board_type
-        FROM board where board_type = #{boardType} and is_use = 1
+        FROM board where board_type = #{boardType} and is_use = 1 order by id desc
     </select>
-    <select id="getBoardLimit" resultType="com.example.springboot_practice.dto.BoardResponseDto">
+    <select id="getBoardLimitClass" resultType="com.example.springboot_practice.dto.BoardResponseDto">
         SELECT
             id,
             title,
@@ -49,7 +49,27 @@
             publisher,
             contents,
             board_type
-        FROM board where is_use = 1 order by id desc limit 10
+        FROM board where is_use = 1 and board_type = "class" order by id desc limit 5
+    </select>
+    <select id="getBoardLimitSchool" resultType="com.example.springboot_practice.dto.BoardResponseDto">
+        SELECT
+            id,
+            title,
+            regdate,
+            publisher,
+            contents,
+            board_type
+        FROM board where is_use = 1 and board_type = "school" order by id desc limit 5
+    </select>
+    <select id="getBoardLimitClub" resultType="com.example.springboot_practice.dto.BoardResponseDto">
+        SELECT
+            id,
+            title,
+            regdate,
+            publisher,
+            contents,
+            board_type
+        FROM board where is_use = 1 and board_type = "club" order by id desc limit 5
     </select>
     <insert id ="saveBoardData" parameterType="com.example.springboot_practice.dto.BoardRequestDto">
         INSERT INTO board (title, regdate, publisher, contents, board_type) VALUES (#{title}, now(), #{publisher}, #{contents}, #{boardType})

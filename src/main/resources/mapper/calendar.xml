@@ -7,7 +7,7 @@
             date,
             regdate,
             event
-        FROM calendar where is_use = 1
+        FROM calendar where is_use = 1 order by id desc
     </select>
     <select id="getCalendarData" resultType="com.example.springboot_practice.dto.CalendarResponseDto">
         SELECT
