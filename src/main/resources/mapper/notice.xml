@@ -26,7 +26,7 @@
             regdate,
             publisher,
             contents
-        FROM notice where is_use = 1 order by id desc limit 1
+        FROM notice where is_use = 1 order by id desc limit 5
     </select>
     <insert id ="saveNoticeData" parameterType="com.example.springboot_practice.dto.NoticeRequestDto">
         INSERT INTO notice (title, regdate, publisher, contents) VALUES (#{title}, now(), #{publisher}, #{contents})
