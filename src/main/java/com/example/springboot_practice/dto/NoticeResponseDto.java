@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class NoticeResponseDto {
     private Long id;
     private String title;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime regDate;
     private Long publisher;
     private String contents;
